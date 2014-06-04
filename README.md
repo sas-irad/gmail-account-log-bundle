@@ -1,6 +1,6 @@
-GMail Account Log Bundle
+## GMail Account Log Bundle ##
 
-1. Add bundle to AppKernel.php
+- Add bundle to AppKernel.php
 ````
 class AppKernel extends Kernel
 {
@@ -12,13 +12,13 @@ class AppKernel extends Kernel
             ...
 ````
 
-2. Update parameters.yml with your account log database parameters:
+- Update parameters.yml with your account log database parameters:
 
 ````
     database_driver: pdo_mysql
-    database_host: _host_
+    database_host: *host*
     database_port: ~
-    database_name: _schema_
-    database_user: _username_
-    database_password: _password_
+    database_name: *schema*
+    database_user: *username*
+    database_password: *password*
 ````
