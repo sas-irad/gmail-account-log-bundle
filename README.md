@@ -8,7 +8,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             ...
-            new Penn\GmailAccountLogBundle\GmailAccountLogBundle(),
+            new SAS\IRAD\GmailAccountLogBundle\GmailAccountLogBundle(),
             ...
 ````
 
