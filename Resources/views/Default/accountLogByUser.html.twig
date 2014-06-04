@@ -1,4 +1,4 @@
-{% extends "AccountLogBundle::base.html.twig" %}
+{% extends "GmailAccountLogBundle::base.html.twig" %}
 
 {% block body %}
 <script src="{{ asset("bundles/gmailaccountlog/js/search.js") }}"></script>
@@ -7,6 +7,6 @@
     <p>Pennkey/PennID: <input id="search_term" value="{{ search_term }}" size="10" maxlength="16"/> <button type="button" id="search" data-search-url="{{ path("accountLogByUser") }}">Search</button></p>
 
     {% if search_term %}
-        {% include "AccountLogBundle:Default:entries-table.html.twig" %}
+        {% include "GmailAccountLogBundle:Default:entries-table.html.twig" %}
    {% endif %}
 {% endblock %}

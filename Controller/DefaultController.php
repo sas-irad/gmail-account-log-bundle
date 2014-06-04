@@ -15,7 +15,7 @@ class DefaultController extends Controller
      */
     public function indexAction() {
         
-        $repo = $this->getDoctrine()->getRepository("AccountLogBundle:AccountLog");
+        $repo = $this->getDoctrine()->getRepository("GmailAccountLogBundle:AccountLog");
         $entries = $repo->getRecentEntries(25);
         
         return array("entries" => $entries);
@@ -31,7 +31,7 @@ class DefaultController extends Controller
         $entries = array();
         
         if ( $search_term ) {
-            $repo = $this->getDoctrine()->getRepository("AccountLogBundle:AccountLog");
+            $repo = $this->getDoctrine()->getRepository("GmailAccountLogBundle:AccountLog");
             $entries = $repo->getBySearchTerm($search_term);
         }
         

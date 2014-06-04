@@ -14,7 +14,7 @@ class AccountLogRepository extends EntityRepository {
         $qb = $this->getEntityManager()->createQueryBuilder();
         
         $qb->select('entry')
-            ->from('AccountLogBundle:AccountLog', 'entry')
+            ->from('GmailAccountLogBundle:AccountLog', 'entry')
             ->orderBy('entry.logTimestamp', 'desc')
             ->setMaxResults($limit);
         
@@ -29,7 +29,7 @@ class AccountLogRepository extends EntityRepository {
         $qb = $this->getEntityManager()->createQueryBuilder();
     
         $qb->select('entry')
-            ->from('AccountLogBundle:AccountLog', 'entry')
+            ->from('GmailAccountLogBundle:AccountLog', 'entry')
             ->orderBy('entry.logTimestamp', 'desc');
 
         if ( preg_match("/^\d{8}$/", $search_term) ) {
