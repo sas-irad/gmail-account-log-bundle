@@ -1,0 +1,29 @@
+{
+	"name" : "sas-irad/gmail-account-log-bundle",
+	"type" : "symfony-bundle",
+	"description" : "Bundle for logging GMail account provisioning",
+	"license" : "Apache-2.0",
+	"minimum-stability" : "dev",
+	"authors" : [{
+			"name" : "Roberto Mansfield",
+			"email" : "robertom@sas.upenn.edu"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3.2"
+	},
+	"require-dev" : {
+		"symfony/framework-bundle" : ">=2.1,<2.2-dev"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Penn\\GmailAccountLogBundle\\" : ""
+		}
+	},
+	"repositories" : [{
+			"type" : "git",
+			"url" : "https://github.com/sas-irad/gmail-account-log-bundle/archive/master.zip",
+			"name" : "dev-master"
+		}
+	]
+}
