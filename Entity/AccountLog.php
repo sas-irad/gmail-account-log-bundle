@@ -1,6 +1,6 @@
 <?php
 
-namespace Penn\AccountLogBundle\Entity;
+namespace SAS\IRAD\GmailAccountLogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AccountLog
  *
  * @ORM\Table(name="accountLog")
- * @ORM\Entity(repositoryClass="Penn\AccountLogBundle\Entity\AccountLogRepository")
+ * @ORM\Entity(repositoryClass="SAS\IRAD\GmailAccountLogBundle\Entity\AccountLogRepository")
  */
 class AccountLog
 {

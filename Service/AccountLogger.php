@@ -1,9 +1,9 @@
 <?php
 
-namespace Penn\AccountLogBundle\Service;
+namespace SAS\IRAD\GmailAccountLogBundle\Service;
 
 use Doctrine\ORM\EntityManager;
-use Penn\AccountLogBundle\Entity\AccountLog;
+use SAS\IRAD\GmailAccountLogBundle\Entity\AccountLog;
 use Penn\GoogleAdminClientBundle\Service\PersonInfoInterface;
 
 class AccountLogger {

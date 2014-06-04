@@ -1,6 +1,6 @@
 <?php
 
-namespace Penn\AccountLogBundle\Entity;
+namespace SAS\IRAD\GmailAccountLogBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

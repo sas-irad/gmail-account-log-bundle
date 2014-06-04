@@ -1,6 +1,6 @@
 <?php
 
-namespace Penn\AccountLogBundle\Controller;
+namespace SAS\IRAD\GmailAccountLogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

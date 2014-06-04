@@ -1,5 +1,5 @@
 services:
 
     account_logger:
-        class:      Penn\AccountLogBundle\Service\AccountLogger
+        class:      SAS\IRAD\GmailAccountLogBundle\Service\AccountLogger
         arguments:  [ @doctrine.orm.entity_manager ]
