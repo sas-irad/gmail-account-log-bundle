@@ -40,7 +40,7 @@ class AccountLogger {
             throw new \Exception("PersonInfo must contain penn_id and pennkey for backFillPennkey operation");
         }
         
-        $repo = $this->em->getRepository("AccountLogRepository:AccountLog");
+        $repo = $this->em->getRepository("GmailAccountLogBundle:AccountLog");
         return $repo->backFillPennkey($penn_id, $pennkey);
     } 
 }
