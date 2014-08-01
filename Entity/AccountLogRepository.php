@@ -63,7 +63,7 @@ class AccountLogRepository extends EntityRepository {
                 ->setParameter(":pennkey", $pennkey)
                 ->setParameter(":penn_id", $penn_id);
 
-        return $qb->getQuery->execute();
+        return $qb->getQuery()->execute();
     }
     
 }
