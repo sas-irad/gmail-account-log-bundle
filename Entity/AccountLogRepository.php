@@ -54,13 +54,12 @@ class AccountLogRepository extends EntityRepository {
         
         $qb = $this->getEntityManager()->createQueryBuilder();
         
-        $qb = $this->update('AccountLogRepository:AccountLog', 'log')
-                ->set('pennkey', ':pennkey')
-                ->where('log.pennid = :penn_id')
+        $qb->update('GmailAccountLogBundle:AccountLog', 'log')
+                ->set('log.pennkey', ':pennkey')
+                ->where('log.pennId = :penn_id')
                 ->andWhere($qb->expr()->orx(
-                    $qb->expr()->eq('log.pennkey', ''),
-                    $qb->expr()->isNull('log.pennkey')
-                ))
+                    "log.pennkey = ''",
+                    "log.pennkey IS NULL"))
                 ->setParameter(":pennkey", $pennkey)
                 ->setParameter(":penn_id", $penn_id);
 
