@@ -49,4 +49,22 @@ class AccountLogRepository extends EntityRepository {
         return $qb->getQuery()->getResult();
     }    
 
+    
+    public function backFillPennkey($penn_id, $pennkey) {
+        
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        
+        $qb = $this->update('AccountLogRepository:AccountLog', 'log')
+                ->set('pennkey', ':pennkey')
+                ->where('log.pennid = :penn_id')
+                ->andWhere($qb->expr()->orx(
+                    $qb->expr()->eq('log.pennkey', ''),
+                    $qb->expr()->isNull('log.pennkey')
+                ))
+                ->setParameter(":pennkey", $pennkey)
+                ->setParameter(":penn_id", $penn_id);
+
+        return $qb->getQuery->execute();
+    }
+    
 }

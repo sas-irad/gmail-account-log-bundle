@@ -29,4 +29,17 @@ class AccountLogger {
         
     }
     
+    
+    public function backFillPennkey(PersonInfoInterface $personInfo) {
+        
+        $penn_id = $personInfo->getPennId();
+        $pennkey = $personInfo->getPennkey();
+        
+        if ( !$penn_id || !$pennkey ) {
+            throw new \Exception("PersonInfo must contain penn_id and pennkey for backFillPennkey operation");
+        }
+        
+        $repo = $this->em->getRepository("AccountLogRepository:AccountLog");
+        return $repo->backFillPennkey($penn_id, $pennkey);
+    } 
 }
