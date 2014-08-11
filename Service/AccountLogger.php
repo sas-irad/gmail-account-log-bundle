@@ -4,7 +4,7 @@ namespace SAS\IRAD\GmailAccountLogBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 use SAS\IRAD\GmailAccountLogBundle\Entity\AccountLog;
-use SAS\IRAD\GoogleAdminClientBundle\Service\PersonInfoInterface;
+use SAS\IRAD\PersonInfoBundle\PersonInfo\PersonInfoInterface;
 
 
 class AccountLogger {
