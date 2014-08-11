@@ -10,16 +10,22 @@ use SAS\IRAD\PersonInfoBundle\PersonInfo\PersonInfoInterface;
 class AccountLogger {
     
     private $em;
+    private $params;
+    private $timezone;
     
-    public function __construct(EntityManager $em) {
+    public function __construct(EntityManager $em, $params) {
         $this->em = $em;
+        $this->params = $params;
+        
+        
+        $this->timezone = new \DateTimeZone($params['timezone']);
     }
     
     public function log(PersonInfoInterface $personInfo, $log_type, $message) {
         
         $entry = new AccountLog();
         
-        $entry->setLogTimestamp(new \DateTime());
+        $entry->setLogTimestamp(new \DateTime("now", $this->timezone));
         $entry->setPennkey($personInfo->getPennkey());
         $entry->setPennId($personInfo->getPennId());
         $entry->setLogType($log_type);

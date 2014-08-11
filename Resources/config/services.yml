@@ -1,5 +1,9 @@
+parameters:
+    account_logger:
+        timezone:     "America/New_York"
+
 services:
 
     account_logger:
         class:      SAS\IRAD\GmailAccountLogBundle\Service\AccountLogger
-        arguments:  [ @doctrine.orm.entity_manager ]
+        arguments:  [ @doctrine.orm.entity_manager, %account_logger% ]
