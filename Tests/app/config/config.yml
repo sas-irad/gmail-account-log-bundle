@@ -15,6 +15,7 @@ framework:
 doctrine:
     dbal:
         driver:   "%database_driver%"
+        path:     "%database_path%"
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"

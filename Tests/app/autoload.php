@@ -7,6 +7,7 @@ use Composer\Autoload\ClassLoader;
  * @var ClassLoader $loader
  */
 $loader = require __DIR__.'/../../vendor/autoload.php';
+$loader->setPsr4('AccountLoggerTestBundle\\', __DIR__.'/../src/AccountLoggerTestBundle/');
 
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 

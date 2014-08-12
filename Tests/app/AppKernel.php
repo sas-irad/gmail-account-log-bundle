@@ -11,6 +11,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),                
             new SAS\IRAD\GmailAccountLogBundle\GmailAccountLogBundle(),
+            new AccountLoggerTestBundle\AccountLoggerTestBundle(),
         );
 
         return $bundles;
