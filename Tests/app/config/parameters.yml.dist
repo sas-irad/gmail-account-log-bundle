@@ -1,7 +1,8 @@
 parameters:
-    database_driver: pdo_mysql
-    database_host: ## database host
-    database_port: ~
-    database_name: ## database name
-    database_user: ## database user
-    database_password: ## database password
+    database_driver:    ## pdo_mysql or pdo_sqlite
+    database_path:      ## enter path here for sqlite3 (igore options below)
+    database_host:      ## database host
+    database_port:      ~
+    database_name:      ## database name
+    database_user:      ## database user
+    database_password:  ## database password
