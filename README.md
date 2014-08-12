@@ -35,3 +35,11 @@ account_log:
     type:     annotation
     prefix:   /admin/accountLog
 ````
+
+- The default time zone for account logging is Eastern Daylight Time. You may override
+by adding the following settings in your parameters.yml file:
+`````
+parameters:
+    account_logger:
+        timezone:     "America/New_York"
+`````
