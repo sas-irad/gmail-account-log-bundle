@@ -28,7 +28,7 @@ class AccountLog
 
     /**
      * @var string
-     * @ORM\Column(name="pennkey", type="string", length=16)
+     * @ORM\Column(name="pennkey", type="string", length=16, nullable=true)
      */
     private $pennkey;
 
