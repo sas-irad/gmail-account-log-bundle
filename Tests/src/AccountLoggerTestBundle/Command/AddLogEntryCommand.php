@@ -31,8 +31,8 @@ class AddLogEntryCommand extends ContainerAwareCommand {
         $message    = $input->getOption('message');
 
         // okay we have a valid person and their info. get the gmail admin service
-        $logger = $this->getContainer()->get('account_logger');
-        $logger->log($personInfo, 'INFO', $message);
+        $logger = $this->getContainer()->get('account_logger_service')->init($personInfo);
+        $logger->log('INFO', $message);
         $output->writeln("Account log entry created for: " . $personInfo->getPennkey());
     }
     
