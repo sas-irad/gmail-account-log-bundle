@@ -48,5 +48,17 @@ class AccountLogger {
         
         $repo = $this->em->getRepository("GmailAccountLogBundle:AccountLog");
         return $repo->backFillPennkey($penn_id, $pennkey);
-    } 
+    }
+
+    
+    public function updatePennkey($penn_id, $old_pennkey, $new_pennkey) {
+        
+        if ( !$penn_id || !$old_pennkey || !$new_pennkey ) {
+            throw new \Exception("Missing parameter for AccountLogger::updatePennkey()");
+        }
+        
+        $repo = $this->em->getRepository("GmailAccountLogBundle:AccountLog");
+        return $repo->updatePennkey($penn_id, $old_pennkey, $new_pennkey);
+        
+    }
 }

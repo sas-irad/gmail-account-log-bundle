@@ -49,7 +49,13 @@ class AccountLogRepository extends EntityRepository {
         return $qb->getQuery()->getResult();
     }    
 
-    
+    /**
+     * An account may be created before a user has a pennkey. In that
+     * case there will be log entries that are missing a pennkey. This
+     * method will update those records with the given pennkey.
+     * @param string $penn_id
+     * @param string $pennkey
+     */
     public function backFillPennkey($penn_id, $pennkey) {
         
         $qb = $this->getEntityManager()->createQueryBuilder();
@@ -63,6 +69,27 @@ class AccountLogRepository extends EntityRepository {
                 ->setParameter(":pennkey", $pennkey)
                 ->setParameter(":penn_id", $penn_id);
 
+        return $qb->getQuery()->execute();
+    }
+
+    /**
+     * In rare cases, a user's pennkey will change. This method
+     * will update log entries to match the new pennkey.
+     * @param string $penn_id
+     * @param string $pennkey
+     */
+    public function updatePennkey($penn_id, $old_pennkey, $new_pennkey) {
+    
+        $qb = $this->getEntityManager()->createQueryBuilder();
+    
+        $qb->update('GmailAccountLogBundle:AccountLog', 'log')
+                ->set('log.pennkey', ':new_pennkey')
+                ->where('log.pennId = :penn_id')
+                ->andWhere('log.pennkey = :old_pennkey')
+                ->setParameter(":old_pennkey", $old_pennkey)
+                ->setParameter(":new_pennkey", $new_pennkey)
+                ->setParameter(":penn_id", $penn_id);
+    
         return $qb->getQuery()->execute();
     }
     
