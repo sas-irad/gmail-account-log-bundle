@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-<title>Google@SAS Account</title>
+<title>{% block page_title %}Google@SAS Account{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/assets/css/global.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/assets/css/local.css') }}" />
 <link rel="shortcut icon" href="{{ asset('bundles/assets/img/favicon.ico') }}" type="image/x-icon" />
@@ -23,9 +23,10 @@
              <img src="{{ asset('bundles/assets/img/hr.gif') }}" width=175 height=34 border=0 alt="" /><br />
              
              <!-- main menu -->
-             
-             <li class="navbar"><a href="{{ path('accountLogIndex') }}" class="navbar">Recent Entries</a></li>
-             <li class="navbar"><a href="{{ path('accountLogByUser') }}" class="navbar">By User</a></li>
+             {% block sidebar_links %}
+                 <li class="navbar"><a href="{{ path('accountLogIndex') }}" class="navbar">Recent Entries</a></li>
+                 <li class="navbar"><a href="{{ path('accountLogByUser') }}" class="navbar">By User</a></li>
+             {% endblock %}
             </div>
        </div>
    </td>
@@ -36,7 +37,7 @@
        <div style="background: #7794C9; height: 17px;"></div>
        
         <div style="width: 600px; padding: 30px; min-height: 600px;">
-        <h3 style="font-family: verdana">SAS Account Log</h3>
+        <h3 style="font-family: verdana">{% block content_header %}SAS Account Log{% endblock %}</h3>
     
         {% block body %}
         {% endblock %}
